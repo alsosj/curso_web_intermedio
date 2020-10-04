@@ -53,6 +53,10 @@ Ejercicio de la sección "JSON, API Rest y AJAX". Listado de fotografías obteni
 
 Ejemplo sobre cómo utilizar Bootstrap para construir un Grid
 
+#### WIP
+
+Continuará…
+
 # Contenido a añadir en el futuro:
 
 * Más contenido y ejercicio de material-ui

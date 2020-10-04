@@ -26,9 +26,6 @@ services:
       - ./backend:/app
       - ./static:/static
       - ./frontend/public:/frontend_public
-#    environment:
-#      - DJANGO_SETTINGS_MODULE=miweb.settings
-#      - PYTHONUNBUFFERED=1
     expose:
       - "8000"
   frontend:
