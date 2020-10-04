@@ -1,0 +1,9 @@
+asgiref==3.2.10
+Django==3.1.1
+djangorestframework==3.11.1
+pytz==2020.1
+sqlparse==0.3.1
+# Dependencias para despliegue en producción
+psycopg2-binary==2.8.6  # Para la DB
+gunicorn==20.0.4  # Servidor de aplicaciones
+django-webpack-loader==0.7.0  # Para empotrar el bundle de Webpack fácilmente

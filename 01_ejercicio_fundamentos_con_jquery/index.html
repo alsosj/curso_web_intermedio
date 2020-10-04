@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio fundamentos</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Fecha de nacimiento</th>
+                <th>Sexo</th>
+                <th>Tiempo parcial</th>
+                <th>Borrar</th>
+            </tr>
+        </thead>
+        <tbody id="table_body">
+            <tr>
+                <td>Alfonso</td>
+                <td>Izquierdo</td>
+                <td>27/11/1971</td>
+                <td>Hombre</td>
+                <td><img src="ok.png" width="32" alt="Sí"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Macarena</td>
+                <td>Díaz</td>
+                <td>27/11/1973</td>
+                <td>Mujer</td>
+                <td><img src="ko.png" width="32" alt="No"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <form>
+        <label for="campo_nombre">Nombre</label>
+        <input type="text" name="nombre" id="campo_nombre"/><br>
+
+        <label for="campo_apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="campo_apellidos"/><br>
+
+        <label for="campo_fecha">Fecha nacimiento</label>
+        <input type="date" name="fecha" id="campo_fecha"/><br>
+
+        <label for="campo_sexo_hombre">Hombre</label>
+        <input type="radio" name="sexo" id="campo_sexo_hombre" value="hombre"/><br>
+        <label for="campo_sexo_mujer">Mujer</label>
+        <input type="radio" name="sexo" id="campo_sexo_mujer" value="mujer"/><br>
+        <label for="campo_sexo_otro">Otro</label>
+        <input type="radio" name="sexo" id="campo_sexo_otro" value="otro"/><br>
+        <label for="campo_sexo_no_especificado">No especificado</label>
+        <input type="radio" name="sexo" id="campo_sexo_no_especificado" value="ne"/><br>
+
+        <label for="campo_tiempo_parcial">Tiempo parcial</label>
+        <input type="checkbox" name="tiempo_parcial" id="campo_tiempo_parcial"/><br>
+    </form>
+    <button id="campo_enviar" onclick="enviarFormulario()">Enviar</button>
+</body>
+</html>

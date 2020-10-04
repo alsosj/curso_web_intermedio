@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Bootstrap</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container" style="background-color: lightblue">
+        <div class="row" style="background-color: burlywood">
+            <div class="col-md-4" style="background-color: darksalmon">
+                <h1>COL1</h1>
+                <p>Este texto pertenece a la primera columna. Ocupa 5 unidades de las 12 totales de la fila</p>
+            </div>
+            <div class="col-md">
+                <div class="row">
+                    <div class="col-md" style="background-color: lightpink">
+                        <h1>COL2</h1>
+                        <p>Este texto pertenece a la segunda columna. Ocupa un poco menos que la anterior, 4 unidades</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md" style="background-color: lightgoldenrodyellow">
+                        <h1>COL3</h1>
+                        <p>Este texto pertenece a la tercera columna. Es la más pequeña de todas, con 3 unidades</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="background-color: saddlebrown">
+            <div class="col-md-3" style="background-color: yellow">
+                <h1>COL4</h1>
+                <p>Nueva columna en otra fila, para probar offset.</p>
+            </div>
+            <div class="col-md-3 offset-md-1" style="background-color: orange">
+                <h1>COL5</h1>
+                <p>Segunda columna de la segunda fila, ya casi estamos.</p>
+            </div>
+            <div class="col-md-3 offset-md-2" style="background-color: darkgreen">
+                <h1>COL6</h1>
+                <p>Última columna de la segunda fila.</p>
+            </div>
+        </div>
+        <div class="row justify-content-around" style="background-color: lightskyblue">
+            <div class="col-2" style="background-color: white">
+                <button class="btn btn-primary">Hola!</button>
+            </div>
+            <div class="col-2" style="background-color: white">
+                <button class="btn btn-secondary btn-sm">Hola!</button>
+            </div>
+            <div class="col-2" style="background-color: white">
+                <button class="btn btn-danger btn-lg">Hola!</button>
+            </div>
+            <div class="col-2" style="background-color: white">
+                <button class="btn btn-dark btn-block">Hola!</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
