@@ -9,5 +9,5 @@ done
 
 python manage.py migrate --noinput
 
-gunicorn miweb.wsgi:application --workers 2 --bind 0.0.0.0:8000 --reload
+gunicorn miweb.wsgi:application --workers 2 --bind 0.0.0.0:8000
 

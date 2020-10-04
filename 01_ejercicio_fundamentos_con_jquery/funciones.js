@@ -37,7 +37,7 @@ function enviarFormulario() {
     const botonBorrar = document.createElement('button');
     botonBorrar.innerText = 'Borrar';
     botonBorrar.click(function () {
-        // Código que elimine la fila
+        // Código que elimina la fila
         nuevaFila.remove();
     });
     celdaBorrar.appendChild(botonBorrar);
