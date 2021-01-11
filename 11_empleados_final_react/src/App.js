@@ -1,18 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import ListaEmpleados from "./ListaEmpleados";
+import TablaPersonal from "./TablaPersonal";
+import Form from "./Form";
+import axios from "axios";
 
-class App extends React.Component {
+class App extends Component {
     state = {
         cabecera: ['Nombre', 'Apellidos', 'Fecha de nacimiento', 'Sexo', 'Tiempo parcial', 'Borrar'],
-        datos: [
-            ['Alfonso', 'Izquierdo', '27/11/1971', 'Hombre', true, ''],
-            ['Macarena', 'Díaz', '27/11/1973', 'Mujer', false, ''],
-        ]
+        datos: []
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:8000/api/employee/').then((r) => {
+            this.setState({datos: r.data})
+        }).catch((e) => {
+            console.log(e);
+        });
     }
 
     render() {
-        return (<ListaEmpleados/>);
+        return (
+            <div>
+                <TablaPersonal cabecera={this.state.cabecera} filas={this.state.datos} borrarFila={this.borrarFila}/>
+                <Form guardar={this.anadirEmpleado}/>
+            </div>
+        );
     }
 
     /*
@@ -21,13 +33,33 @@ class App extends React.Component {
     */
 
     borrarFila = (indiceBorrar) => {
-        const nuevasFilas = this.state.datos.filter((fila, index) => {
-            return index !== indiceBorrar;
-        });
+        axios.delete(`http://localhost:8000/api/employee/${indiceBorrar}/`).then((r) => {
+            // Si el servidor no me da el estado nuevo, lo intento predecir
+            /*const nuevasFilas = this.state.datos.filter((empleado, index) => {
+                return empleado.pk !== indiceBorrar;
+            });
+            this.setState({datos: nuevasFilas});
+             */
 
-        //this.state.datos = nuevasFilas; // MAL: React no se daría cuenta del cambio y no repintaría la tabla
-        this.setState({datos: nuevasFilas});
+            // Si el servidor me devuelve el nuevo estado, lo guardo
+            this.setState({datos: r.data});
+        }).catch((e) => {
+            console.log(e);
+        });
     };
+
+    anadirEmpleado = (nuevoEmpleado) => {
+        // Forma tradicional
+        /*const nuevosDatos = this.state.datos;
+        nuevosDatos.push(nuevoEmpleado);
+        this.setState({datos: nuevosDatos});*/
+
+        axios.post('http://localhost:8000/api/employee/', nuevoEmpleado).then((r) => {
+            this.setState({datos: [...this.state.datos, r.data]});
+        }).catch((e) => {
+            console.log(e);
+        });
+    }
 }
 
 export default App;

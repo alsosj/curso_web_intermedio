@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import ListaEmpleados from "./Empleados/ListaEmpleados";
 import Album from "./Fotos/Album";
 import Peliculas from "./Cine/Peliculas";
+import NavBar from "./NavBar";
 
 class App extends React.Component {
     state = {
@@ -17,6 +18,7 @@ class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
+                <NavBar/>
                 <Switch>
                     <Route path="/empleados" component={ListaEmpleados}/>
                     <Route path="/fotos" component={Album}/>

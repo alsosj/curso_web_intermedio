@@ -3,6 +3,8 @@ import Button from '@material-ui/core/Button'
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
+import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function TBody(props) {
     const filas = props.filas.map((fila, indiceFila) => {
@@ -13,7 +15,7 @@ function TBody(props) {
                 <TableCell>{fila.fecha !== null ? fila.fecha.toLocaleDateString('en-GB') : ''}</TableCell>
                 <TableCell>{fila.sexo}</TableCell>
                 <TableCell><img width={64} src={fila.tiempo_parcial === true ? 'ok.png' : 'ko.png'} alt={fila.tiempo_parcial === true ? 'Sí': 'No'}/></TableCell>
-                <TableCell><Button variant="contained" color="secondary" onClick={() =>{props.borrarFila(indiceFila)}}>Borrar</Button></TableCell>
+                <TableCell><Button variant="contained" color="secondary" onClick={() =>{props.borrarFila(indiceFila)}}><FontAwesomeIcon icon={faTrashAlt}/></Button></TableCell>
             </TableRow>
         );
     });
