@@ -1,0 +1,29 @@
+html {
+  background-color: #ddd;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.pantalla {
+  background-color: #fff;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+}
+
+.boton-numerico {
+  background-color: #dddddd;
+  color: black;
+}
+
+.boton-borrar {
+  background-color: red;
+  color: #400;
+}
+
+.boton-operacion {
+  background-color: deepskyblue;
+  color: midnightblue;
+}

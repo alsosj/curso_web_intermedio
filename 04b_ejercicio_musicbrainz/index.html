@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Bootstrap</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped table-bordered table-hover table-responsive-sm" id="tabla_resultados" style="display: none;">
+        <thead class="thead-dark">
+        <tr id="headers_row">
+
+        </tr>
+        </thead>
+        <tbody id="table_body">
+        </tbody>
+    </table>
+    <div class="row"  id="grid_ficha_artista" style="display: none;">
+        <div class="col">
+            <div class="row">
+                <div class="col-9">
+                    <h1 id="nombre_artista">HOLA!</h1>
+                </div>
+                <div class="col">
+                    <h2 id="pais_artista"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row"  id="grid_ficha_release_group" style="display: none;">
+        <div class="col">
+            <div class="row">
+                <div class="col-5">
+                    <h1 id="titulo_release_group">HOLA!</h1>
+                </div>
+                <div class="col">
+                    <h2 id="lanzamiento_release_group"></h2>
+                </div>
+                <div class="col-4">
+                    <img id="caratula_release_group" alt="Carátula" src="" width="250"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <table class="table table-striped table-bordered table-hover table-responsive-sm" id="tabla_artista" style="display: none;">
+        <thead class="thead-dark">
+        <tr>
+            <th>Título</th>
+            <th>Lanzamiento</th>
+            <th>Carátula</th>
+        </tr>
+        </thead>
+        <tbody id="artist_table_body">
+        </tbody>
+    </table>
+
+    <div id="btnParent">
+
+    </div>
+
+    <form onsubmit="return buscar();">
+        <label for="input_busqueda">Título</label>
+        <input type="text" id="input_busqueda"/>
+        <input type="submit" value="Enviar"/>
+    </form>
+
+    <label for="entity_selection"></label>
+    <select id="entity_selection" name="entity_selection">
+        <option value="artist">Artista</option>
+        <option value="release-group">Lanzamiento</option>
+    </select>
+</div>
+</body>
+</html>
